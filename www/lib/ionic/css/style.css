@@ -62,23 +62,23 @@ h4{
 
     #aboutTextTitle {
         font-family: Copperplate;
-        font-size: 3em;
-        line-height: 36px;
+        font-size: 2em;
+        line-height: 24px;
     }
 
 
 
     .aboutTextContent {
         font-family: AppleGothic;
-        font-size: 2em;
-        line-height: 26px;
+        font-size: 1em;
+        line-height: 15px;
     }
 
 
     #aboutTextCreatedBy {
         font-family: Copperplate;
-        font-size: 1.5em;
-        line-height: 26px;
+        font-size: .75em;
+        line-height: 15px;
     }
 
 

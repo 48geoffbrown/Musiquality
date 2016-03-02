@@ -61,7 +61,14 @@ angular.module('app.routes', [])
       views: {
         'tab4': {
           templateUrl: 'templates/myLikes.html',
-          controller: 'myLikesCtrl'
+          controller: 'myLikesController'
+        }
+      },
+      resolve: {
+        likes: function (userService, $http, artistService) {
+          return $http.get("https://musiquality.firebaseio.com/users/" + userService.user.uid + '.json').then(function(response){
+            artistService.currentLikes = response.data;
+          });
         }
       }
     })

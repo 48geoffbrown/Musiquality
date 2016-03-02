@@ -13,6 +13,7 @@ function artistService(userService)
   as.id2 = '';
   as.currentArtist = '';
   as.bandPic = '';
+  as.currentLikes = '';
   as.addLikes = addLikes;
 
   function addLikes(){

@@ -10,29 +10,14 @@ myLikesController.$inject = ['$http', 'userService','$scope', '$state', 'artistS
 function myLikesController($http, userService, $scope, $state, artistService) {
 // controller data and functions
     var ml = this;
-    ml.currentLikes = '';
+    ml.artistService = artistService;
     ml.currentArtist = '';
     ml.popularity = '';
     ml.genre = '';
     ml.bandPic = '';
-    ml.getLikes = getLikes;
     ml.artistStuff = artistStuff;
     ml.artistSearch = artistSearch;
 
-  getLikes();
-  $scope.$on('$ionicView.beforeEnter', function() {
-    getLikes();
-  });
-
-    function getLikes() {
-
-        $http.get("https://musiquality.firebaseio.com/users/" + userService.user.uid + '.json').then(function(response){
-            ml.currentLikes = response.data;
-        });
-
-
-
-    }
 
   function artistSearch(artist) {
     $http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist').then(function (response) {

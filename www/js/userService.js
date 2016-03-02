@@ -10,12 +10,10 @@ function userService($localStorage) {
   var us = this;
   us.update = update;
   us.user = $localStorage['firebase:session::musiquality'];
-  console.log(us.user.uid);
 
 
   function update() {
     us.user = $localStorage['firebase:session::musiquality'];
-    console.log(us.user.uid);
   }
 
 }
