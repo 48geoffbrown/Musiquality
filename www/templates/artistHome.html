@@ -31,11 +31,11 @@
                     <div class="item-button-right">
                         <div class="buttons">
                             <button class="button item-button-right button-small"
-                                    ng-click="ah.songLyrics(ah.artist, item.name)">Lyrics
+                                    ng-click="ah.songLyrics(ah.artistService.currentArtist, item.name)">Lyrics
                             </button>
                             <br>
                             <button class="button item-button-right button-small"
-                                    ng-click="ah.buyTrack(ah.artist, item.name)">Buy
+                                    ng-click="ah.buyTrack(ah.artistService.currentArtist, item.name)">Buy
                             </button>
                         </div>
                     </div>
