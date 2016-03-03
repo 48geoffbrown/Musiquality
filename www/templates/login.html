@@ -6,11 +6,9 @@
       <div ng-controller="MainController as vm">
 
         <div ng-hide="vm.loggedIn">
-          <br/>
-          <br/>
-          <br/>
 
-          <h2>Welcome to Musiquality!!</h2>
+          <h2>Welcome to</h2>
+          <div class="aboutBG"></div>
 
           <br/>
           <br/>
@@ -22,14 +20,16 @@
 
         </div>
 
-
         <div ng-show="vm.loggedIn">
 
           <h2>Log in successful!!</h2>
-
+          <br/>
+          <div class="aboutBG"></div>
+          <br/>
           <a ui-sref="tabsController.home"><button>Continue</button></a>
+          <br/>
 
-        </div>
+          </div>
 
       </div>
 

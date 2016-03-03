@@ -1,10 +1,10 @@
 <ion-view title="Artist Home" class="backGroundImage">
-    <ion-content overflow-scroll="true" padding="true" class="has-header has-footer"
+    <ion-content overflow-scroll="true" padding="true" class="headerCenter has-header"
                  ng-controller="ArtistHomeController as ah">
 
         <form class="list">
             <div class="fullFont item item-button-right button-large"><h1>{{ah.artistService.currentArtist}}</h1>
-                <button class="likeBtn button ion-thumbsup" ng-click="ah.likesPage()"> Like</button>
+                <button class="likeBtn button ion-thumbsup" ng-click="ah.likesPage()"></button>
             </div>
             <img class="fullImage" src="{{ah.artistService.bandPic}}"/>
         </form>
