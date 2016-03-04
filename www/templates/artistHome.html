@@ -31,11 +31,11 @@
                     <div class="item-button-right">
                         <div class="buttons">
                             <button class="button item-button-right button-small"
-                                    ng-click="ah.songLyrics(ah.artist, item.name)">Lyrics
+                                    ng-click="ah.songLyrics(ah.artistService.currentArtist, item.name)">Lyrics
                             </button>
                             <br>
                             <button class="button item-button-right button-small"
-                                    ng-click="ah.buyTrack(ah.artist, item.name)">Buy
+                                    ng-click="ah.buyTrack(ah.artistService.currentArtist, item.name)">Buy
                             </button>
                         </div>
                     </div>
@@ -72,12 +72,12 @@
         </ion-item>
         <div class="item" ng-show="ah.newsClicked">
 
-            <ion-item href="#" ng-click="ah.news(ah.artistService.currentArtist)">About the Artist</ion-item>
+            <button class="button" ng-click="ah.news(ah.artistService.currentArtist)">Go to Artist News</button>
             <div ng-show="ah.newsClicked">
 
                 <ul>
                     <li>
-                        <button class="button" ng-click="ah.wiki(ah.artistService.currentArtist)">Go to Wiki</button>
+                        <button class="button" ng-click="ah.wiki(ah.artistService.currentArtist)">Go to Artist Wiki</button>
                         <br> <br>
                     </li>
                 </ul>
