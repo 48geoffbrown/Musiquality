@@ -7,6 +7,7 @@
 
             </label>
             <button class="button button-clear" type="submit" ng-click="tc.songTitleSearch(tc.song)"></button>
+            <div class="noResults" ng-show="tc.results2 === 'noGood'">Sorry. Your search didn't return any results. Please try another song title.</div>
             <ul ng-repeat="item in tc.results">
                 <li class="item item-thumbnail-left">
 
@@ -26,7 +27,7 @@
 
                 </li>
             </ul>
-            <div class="noResults" ng-show="tc.noResults">Sorry. Your search didn't return any results. Please try another song title.</div>
+
         </form>
 
     </ion-content>

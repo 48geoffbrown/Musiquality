@@ -7,18 +7,19 @@
         <input type="text" placeholder="Type Album Name" ng-model="ac.album" ng-click="ac.hideAlert()">
       </label>
       <button class="button button-clear" type="submit" ng-click="ac.albumSearch(ac.album)"></button>
+      <div class="noResults" ng-show="ac.results2 === 'noGood'">Sorry. Your search didn't return any results. Please try another album title.</div>
       <ul ng-repeat="item in ac.results">
         <li class="item item-thumbnail-left" ng-click="ac.currentArtist(item.id)">
           <img ng-src="{{item.images[1].url}}"/>
 
 
           <div class="item-button-right">
-            <button class="item-button-right button smallText" >Artist Page</button>
+            <button class="item-button-right button smallText">Artist Page</button>
           </div>
           <span class="rcArtistName"><br><br>{{item.name}}</span>
         </li>
       </ul>
-      <div class="noResults" ng-show="ac.noResults">Sorry. Your search didn't return any results. Please try another album title.</div>
+
 
     </form>
   </ion-content>
