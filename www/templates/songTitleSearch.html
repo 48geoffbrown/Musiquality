@@ -3,11 +3,10 @@
         <form class="list">
             <label class="item item-input">
                 <!--<span class="input-label">Input</span>-->
-                <input type="text" placeholder="Type Song Title" ng-model="tc.song">
+                <input type="text" placeholder="Type Song Title" ng-model="tc.song" ng-click="tc.hideAlert()">
 
             </label>
             <button class="button button-clear" type="submit" ng-click="tc.songTitleSearch(tc.song)"></button>
-
             <ul ng-repeat="item in tc.results">
                 <li class="item item-thumbnail-left">
 
@@ -25,9 +24,10 @@
                         <button class="item-button-right button smallText" ui-sref="tabsController.artistHome" ng-click="tc.currentArtist(item.album.id)">Artist Page</button>
                     </div>
 
-
                 </li>
             </ul>
+            <div class="noResults" ng-show="tc.noResults">Sorry. Your search didn't return any results. Please try another song title.</div>
         </form>
+
     </ion-content>
 </ion-view>

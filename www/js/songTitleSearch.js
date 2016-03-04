@@ -15,11 +15,16 @@ function TitleController($http, artistService, $state) {
   tc.playTrack = playTrack;
   tc.pauseTrack = pauseTrack;
   tc.currentArtist = currentArtist;
+  tc.hideAlert = hideAlert;
 
   function songTitleSearch(song) {
-    $http.get('https://api.spotify.com/v1/search?q=' + song + '&type=track').then(function (response) {
-      tc.results = response.data.tracks.items;
-    });
+
+      $http.get('https://api.spotify.com/v1/search?q=' + song + '&type=track').then(function (response) {
+        tc.results = response.data.tracks.items;
+        if(tc.results == '') {
+          tc.noResults = true;
+        }
+      });
   }
 
   function currentArtist(id) {
@@ -43,6 +48,11 @@ function TitleController($http, artistService, $state) {
   function pauseTrack() {
     tc.audioObject.pause();
   }
+  function hideAlert(){
+    tc.noResults = false;
+  }
+
+
 }
 
 

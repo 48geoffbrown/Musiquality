@@ -3,7 +3,7 @@
     <form class="list">
       <label class="item item-input">
         <!--<span class="input-label">Input</span>-->
-        <input type="text" placeholder="Type Artist Name" ng-model="nc.artist">
+        <input type="text" placeholder="Type Artist Name" ng-model="nc.artist" ng-click="nc.hideAlert()">
       </label>
       <button class="button button-clear" type="submit" ng-click="nc.artistSearch(nc.artist)"></button>
       <ul ng-repeat="item in nc.results">
@@ -17,6 +17,8 @@
           </div>
         </li>
       </ul>
+      <div class="noResults" ng-show="nc.noResults">Sorry. Your search didn't return any results. Please try another artist name.</div>
+
     </form>
   </ion-content>
 </ion-view>
