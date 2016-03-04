@@ -13,10 +13,14 @@ function NameController($http, artistService, $state) {
   nc.results = '';
   nc.artistSearch = artistSearch;
   nc.currentArtist = currentArtist;
+  nc.hideAlert = hideAlert;
 
   function artistSearch(artist) {
     $http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist').then(function (response) {
       nc.results = response.data.artists.items;
+      if(nc.results == '') {
+        nc.noResults = true;
+      }
 
       console.log(artistService.login);
 
@@ -28,6 +32,9 @@ function NameController($http, artistService, $state) {
     artistService.bandPic = pic;
     artistService.id = '';
     //$state.go('tabsController.artistHome');
+  }
+  function hideAlert(){
+    nc.noResults = false;
   }
 }
 

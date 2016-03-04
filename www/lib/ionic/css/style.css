@@ -99,3 +99,11 @@ h4{
     width: 219px;
     margin: auto;
 }
+.feedbackAlert{
+    color: red;
+    background-color: white;
+    font-weight: bolder;
+}
+.noResults{
+    color: red;
+}
